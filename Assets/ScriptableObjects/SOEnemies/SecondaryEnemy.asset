@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cb67c99b661924da2b9d967a5a25b6, type: 3}
+  m_Name: SecondaryEnemy
+  m_EditorClassIdentifier: 
+  modelEnemy:
+    Prefab: {fileID: -4600427044269298992, guid: 06b509a411f16734db0f7fb8a8965454, type: 3}
+    Health: 10
+    Speed: 10
+    enemy:
+    - {fileID: 11400000, guid: 304c0ac0d3c220b499d96174e8c30064, type: 2}
