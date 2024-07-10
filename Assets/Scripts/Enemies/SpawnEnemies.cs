@@ -7,11 +7,11 @@ using Random = UnityEngine.Random;
 public class SpawnEnemies : MonoBehaviour
 {
     [SerializeField] private WaveInfo[] waveInfo;
-    [SerializeField] private Transform[] spawnPos;
     [SerializeField] private List<EnemyUnit> enemies;
+    [SerializeField] private Transform[] spawnPos;
     private WaitForSeconds wait;
     private WaitForSeconds waitPatrticle;
-    private bool IsLock;
+    private bool IsLock = false;
 
     private void Update()
     {
@@ -32,40 +32,28 @@ public class SpawnEnemies : MonoBehaviour
             yield return wait;
             for (int j = 0; j < waveInfo[i].MaxEnemies; j++)
             {
-                EnemyUnit prefab = Instantiate(waveInfo[i].prefab.modelEnemy.Prefab, spawnPos[Random.Range(0, spawnPos.Length)].transform);
-                prefab.Init(waveInfo[i].prefab.modelEnemy);
+                EnemyUnit prefab = Instantiate(waveInfo[i].prefab.modelEnemy.Prefab, spawnPos[Random.Range(0, spawnPos.Length)]);
+                prefab.Init(waveInfo[i].prefab.modelEnemy,this);
                 enemies.Add(prefab);
             }
         }
     }
-    public IEnumerator ChildSpawn()
+    public void TryPlayChildSpawn(EnemyUnit enemy, SOEnemy[] Modelenemies)
     {
-        if (enemies.Count > 0) // ÏĞÎÂÅĞßŞ ÅÑÒÜ ËÈ ÂĞÀÃÈ Â ÑÏÈÑÊÅ, ÀÍÒÎÍ
+        enemies.Remove(enemy);
+        if (Modelenemies.Length > 0)
         {
-            for (int i = enemies.Count - 1; i >= 0; i--) // ÑÎÇÄÀŞ ÖÈÊË Ñ ÊÎÍÖÀ Â İÒÎ ÑÏÈÑÊÅ, ÀÍÒÎÍ
-            {
-                if (enemies[i].ModelEnemy.Health <= 0) // ÈÙÓ ÌÅĞÒÂÎÃÎ ÂĞÀÃÀ, ÀÍÒÎÍ
-                {
-                    if (enemies[i].ModelEnemy.enemy.Length > 0) // ÑÌÎÒĞŞ ÅÑÒÜ ËÈ Â ÍÅÌ ÊÎÃÎ ÌÎÆÍÎ ÇÀÑÏÀÂÍÈÒÜ, ÀÍÒÎÍ
-                    {
-                        for (int j = 0; j < enemies[i].ModelEnemy.enemy.Length; j++) // ÏÎ ÌÀÑÑÈÂÓ ÊÎÃÎ ÌÎÆÍÎ ÇÀÑÏÀÂÍÈÒÜ ÈÄÓ, ÀÍÒÎÍ
-                        {
-                            waitPatrticle = new WaitForSeconds(enemies[i].ParticleSystem.main.duration); // ÑÒÀÂËŞ ÒÀÉÌÅĞ ÏÎ ÂĞÅÌÅÍÈ Ñ ÏÀĞÒÈÊËÀ, ÀÍÒÎÍ ((( ß ÄÅŞÀÆÈË ÎÍÎ ÑÒÀÂÈÒÑß, ÒÀÌ ÍÅ 0 ))))!
-                            yield return waitPatrticle; // ÇÀÄÅĞÆÊÀ ÊÎÄÀ ÏÎ ÒÀÉÌÅĞÓ, ÀÍÒÎÍ
-                            EnemyUnit ChildPrefab = Instantiate(enemies[i].ModelEnemy.enemy[j].modelEnemy.Prefab, enemies[i].transform.position, Quaternion.identity); // ÑÏÀÂÍ, ÀÍÒÎÍ
-                            ChildPrefab.Init(enemies[i].ModelEnemy.enemy[j].modelEnemy); // Â ÇÀÑÏÀÂÍÅÍÍÛÉ ÏĞÅÔÀÁ ÏÈÕÀŞ ÌÎÄÅËÜ, ÀÍÒÎÍ
-                            enemies.Add(ChildPrefab); // ÇÀÊÈÄÛÂÀŞ Â ÑÏÈÑÎÊ, ÀÍÒÎÍ
-                        }
-                        enemies.Remove(enemies[i]); // ÏÎÑËÅ ÖÈÊËÀ ÄËß ÑÏÀÂÍÀ ÓÄÀËßŞ ÈÇ ÑÏÈÑÊÀ ÒÀÍÊ Ñ ÊÎÒÎĞÎÃÎ ÑÏÀÂÍÈËÈ, ÀÍÒÎÍ
-                    }
-                    else // ÅÑËÈ ÇÀÑÏÀÂÍÈÒÜ ÍÅÊÎÃÎ, ÀÍÒÎÍ
-                    {
-                        enemies.Remove(enemies[i]);// ÓÇÄÀËÅÍÈÅ ÈÇ ÑÏÈÑÊÀ, ÀÍÒÎÍ
-                    }
-                }
-            }
+            SpawnChild(enemy.transform.position, Modelenemies);
         }
-
+    }
+    private void SpawnChild(Vector2 pos, SOEnemy[] models)
+    {
+        for (int i = 0; i < models.Length; i++)
+        {
+            EnemyUnit prefab = Instantiate(models[i].modelEnemy.Prefab, pos, Quaternion.identity);
+            prefab.Init(models[i].modelEnemy, this);
+            enemies.Add(prefab);
+        }
     }
 }
 

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1901ad28499f334988db927a3cf9cb1, type: 3}
+  m_Name: SixTank
+  m_EditorClassIdentifier: 
+  ModelTanks:
+    speed: 10
+    Tank: {fileID: 1617182541434930900, guid: 6000ebf0a6e1e0c499fbecaf5223df04, type: 3}
+    soGun:
+    - {fileID: 11400000, guid: 154bad7f3cb61c443b0be3f69c91d7e9, type: 2}
+    - {fileID: 11400000, guid: 154bad7f3cb61c443b0be3f69c91d7e9, type: 2}
+    - {fileID: 11400000, guid: 154bad7f3cb61c443b0be3f69c91d7e9, type: 2}
+    - {fileID: 11400000, guid: ecb345391d619ca488acf8d3df759e97, type: 2}

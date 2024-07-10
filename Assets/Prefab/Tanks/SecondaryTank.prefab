@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5293311490739489846}
   - component: {fileID: 8425819235950067169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,8 @@ GameObject:
   - component: {fileID: -3416969561331114167}
   - component: {fileID: 5233374728548795836}
   - component: {fileID: 6486858184886386753}
-  m_Layer: 0
+  - component: {fileID: 899452765090372428}
+  m_Layer: 6
   m_Name: SecondaryTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,14 +136,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c0531cc97bd9f45a0cdb5ee2abf8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Upgrade: {fileID: 899452765090372428}
   ModelTank:
     speed: 0
     Tank: {fileID: 0}
     soGun: []
-  SOTank: {fileID: 11400000, guid: f7fda81cb1da8664587c6c9e6d3857c7, type: 2}
+  SOTank: {fileID: 11400000, guid: bca7d8eec6415434581243c5eddba96e, type: 2}
   GunList:
   - {fileID: 8561650291480318480}
   - {fileID: 3301112773785954495}
+  pets: []
   rb: {fileID: 5233374728548795836}
 --- !u!50 &5233374728548795836
 Rigidbody2D:
@@ -216,6 +219,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.07, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &899452765090372428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082771281752660695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7780f6cccb3b64daf54958aa25f4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TankBase: {fileID: 0}
 --- !u!1 &3294399517892788138
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1185614709857161249}
   - component: {fileID: 7539326180758006118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3010160833425541139}
   - component: {fileID: 2330922618670334424}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4066362355696989725}
   - component: {fileID: 7886680800966026869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4259369345885504066}
   - component: {fileID: 2754084037615331592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,6 +582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniGoldGunForRedBullet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1257270286629938423, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2306713134800922766, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -622,6 +642,18 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 3229557446362862065, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211617216510239945, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078017168707335985, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -654,6 +686,10 @@ PrefabInstance:
     - target: {fileID: 1257270286629938423, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
       propertyPath: m_Name
       value: MiniGoldGunForRedBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1257270286629938423, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2306713134800922766, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
       propertyPath: m_LocalScale.x
@@ -711,6 +747,18 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 3229557446362862065, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211617216510239945, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078017168707335985, guid: 920f57e01874c364aadcd40915dff61a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

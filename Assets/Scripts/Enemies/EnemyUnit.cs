@@ -4,80 +4,43 @@ using UnityEngine;
 
 public class EnemyUnit : MonoBehaviour
 {
-    [SerializeField] private SpawnEnemies spawnEnemies;
-    public ParticleSystem ParticleSystem;
+    public SpawnEnemies spawnEnemies;
+    public EnemyController controller;
+    public ParticleSystem particleSystem;
+    public Rigidbody2D rb;
     public ModelEnemy ModelEnemy;
-    private Vector2 direction;
-    public void Init(ModelEnemy modelEnemy)
+
+
+    public void Init(ModelEnemy model, SpawnEnemies spawn)
     {
-        
-        ModelEnemy = modelEnemy;
+        ModelEnemy = model;
+        spawnEnemies = spawn;
     }
-    //public void SetTarget(Vector2 target)
-    //{
-    //    transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * ModelEnemy.Speed);
-    //}
     private void Start()
     {
-        //direction = Vector2.down;
+        controller = new EnemyController(this);
+        controller.Switch(new EnemyIdleState(controller));
     }
+
     private void Update()
     {
-        Move();
-        DestroyEnemy();
+        if (controller.unit.ModelEnemy.Health <= 0 && !controller.Current.GetType().Equals(typeof(EnemyDeathState)))
+        {
+            controller.Switch(new EnemyDeathState(controller));
+        }
+        controller?.OnUpdate();
     }
-    protected void Move()
+    private void OnDrawGizmos()
     {
-        transform.Translate(direction * ModelEnemy.Speed * Time.deltaTime);
+        Gizmos.color = Color.yellow;
+        Vector3 direction = transform.TransformDirection((Vector2)transform.right * (rb.velocity.x < 0 ? 1 : -1) * 1f);
+        Gizmos.DrawRay(transform.position, direction);
     }
-
-    protected RaycastHit2D Find(Vector2 direction)
-    {
-        RaycastHit2D hit;
-        hit = Physics2D.Raycast(transform.position, direction, 1f);
-        return hit;
-    }
-
-    protected void FindLogic()
-    {
-        if (Find(transform.forward).collider.TryGetComponent<EnemyUnit>(out EnemyUnit unit))
-        {
-            direction = transform.forward * -1;
-        }
-        if (Find(transform.forward * -1).collider.TryGetComponent<EnemyUnit>(out EnemyUnit unit2))
-        {
-            direction = transform.forward;
-        }
-        if (Find(transform.right).collider.TryGetComponent<TankBase>(out TankBase tank))
-        {
-            direction = transform.right;
-        }
-        if (Find(transform.right * -1).collider.TryGetComponent<TankBase>(out TankBase tank2))
-        {
-            direction = transform.right * -1;
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<TankBase>(out TankBase tank))
         {
             Destroy(tank.gameObject);
         }
-    }
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, direction);
-    }
-    private void DestroyEnemy()
-    {
-        if (ModelEnemy.Health <= 0)
-        {
-            ParticleSystem.Play();
-            Destroy(gameObject, ParticleSystem.main.duration);
-            StartCoroutine(spawnEnemies.ChildSpawn());
-        }        
     }
 }

@@ -3,17 +3,28 @@ using UnityEngine;
 
 public abstract class TankBase : MonoBehaviour
 {
+    public Transform CameraTraget;
     public ModelTank ModelTank;
     public SOTank SOTank;
     public List<Gun> GunList;
     [SerializeField] protected Rigidbody2D rb;
 
-    private void Start()
+    public void Init(ModelTank tank)
     {
-        ModelTank = SOTank.GetModel(this).Value;
+        ModelTank = tank;
+    }
+    //private void Awake()
+    //{
+    //    for (int i = 0; i < GunList.Count; i++)
+    //    {
+    //        GunList[i].Init(ModelTank.soGun[i].modelGun,null,this);
+    //    }
+    //}
+    public void InitGun()
+    {
         for (int i = 0; i < GunList.Count; i++)
         {
-            GunList[i].Init(this, ModelTank.soGun[i].modelGun);
+            GunList[i].Init(ModelTank.soGun[i].modelGun, null, this);
         }
     }
     public virtual void Move()

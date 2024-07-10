@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6999649715810031914}
   - component: {fileID: 2583972696386787450}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1096284535416840015}
   - component: {fileID: 5037834614180413421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,6 +169,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2052650286941817724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289900016088102663}
+  m_Layer: 6
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &289900016088102663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052650286941817724}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6755265723234604471}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3716554615027263261
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7428001404647893355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +243,8 @@ GameObject:
   - component: {fileID: -2497776112707715010}
   - component: {fileID: 6611321073670626878}
   - component: {fileID: 3628666250909942564}
-  m_Layer: 0
+  - component: {fileID: 1104391228880975946}
+  m_Layer: 6
   m_Name: FirstTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,6 +270,7 @@ Transform:
   - {fileID: 8740299593883810303}
   - {fileID: 1096284535416840015}
   - {fileID: 7428001404647893355}
+  - {fileID: 289900016088102663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-2497776112707715010
@@ -252,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907d509dc5c5d454db85ea1477506fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraTraget: {fileID: 289900016088102663}
   ModelTank:
     speed: 0
     Tank: {fileID: 0}
@@ -332,6 +366,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &1104391228880975946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861026388829051003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7780f6cccb3b64daf54958aa25f4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5041670798295569793
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969870164583922806}
   - component: {fileID: 3656836559123241138}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740299593883810303}
   - component: {fileID: 2177847033856277288}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3175658811901811629}
   - component: {fileID: 2440236530099219439}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,6 +638,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1096284535416840015}
     m_Modifications:
+    - target: {fileID: 2248216386740459129, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600936413906910492, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6975520047578105963, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -647,6 +701,14 @@ PrefabInstance:
     - target: {fileID: 7025679386089975955, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
       propertyPath: m_Name
       value: RedGunForRedBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025679386089975955, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045608326958275001, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

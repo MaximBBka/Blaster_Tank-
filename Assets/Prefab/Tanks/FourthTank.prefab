@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3075024096156095403}
   - component: {fileID: 6412673989996943168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1572382024946551672}
   - component: {fileID: 979648613025097718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,8 @@ GameObject:
   - component: {fileID: 2664818236780066010}
   - component: {fileID: 644447370691596794}
   - component: {fileID: 2144429373512486550}
-  m_Layer: 0
+  - component: {fileID: 5389605852817993986}
+  m_Layer: 6
   m_Name: FourthTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,16 +220,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9502045b7123aec4594a0e1b227a676a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Upgrade: {fileID: 5389605852817993986}
   ModelTank:
     speed: 0
     Tank: {fileID: 0}
     soGun: []
-  SOTank: {fileID: 11400000, guid: f7fda81cb1da8664587c6c9e6d3857c7, type: 2}
+  SOTank: {fileID: 11400000, guid: 692c097950c95d14aa987304e85a05fb, type: 2}
   GunList:
   - {fileID: 7024284706425427661}
   - {fileID: 6077186323786642752}
   - {fileID: 6162639245276914467}
   - {fileID: 7211827734701577086}
+  pets: []
   rb: {fileID: 781533812355661600, guid: cdbf0093e6aebc94895f675d455032c9, type: 3}
 --- !u!61 &644447370691596794
 BoxCollider2D:
@@ -302,6 +305,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &5389605852817993986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212681734027980525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7780f6cccb3b64daf54958aa25f4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TankBase: {fileID: 0}
 --- !u!1 &6430467003817647885
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7991224271269866884}
   - component: {fileID: 2076190060937690364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4068827733059487423}
   - component: {fileID: 1436786438858583270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9028025159835646066}
   - component: {fileID: 3384872072636023503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,6 +590,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2248216386740459129, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600936413906910492, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6975520047578105963, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.7
@@ -630,10 +654,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedGunForRedBullet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7025679386089975955, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9045608326958275001, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 9045608326958275001, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -663,13 +695,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7991224271269866884}
     m_Modifications:
+    - target: {fileID: 1544479487400278488, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5742229169650174192, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 5742229169650174192, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7263975293129437889, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
       propertyPath: m_Name
       value: GreenGunForGreenBullet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263975293129437889, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193162869649831285, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9183172106705645535, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
       propertyPath: m_LocalScale.x
@@ -760,6 +808,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2248216386740459129, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600936413906910492, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6975520047578105963, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.7
@@ -816,10 +872,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedGunForRedBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 7025679386089975955, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9045608326958275001, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 9045608326958275001, guid: 0b4ed84eb8283134bb1d4fdd625cf207, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -849,13 +913,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7991224271269866884}
     m_Modifications:
+    - target: {fileID: 1544479487400278488, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5742229169650174192, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 5742229169650174192, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7263975293129437889, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
       propertyPath: m_Name
       value: GreenGunForGreenBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263975293129437889, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193162869649831285, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9183172106705645535, guid: d99f18c1cb4192944ba5db21c137254e, type: 3}
       propertyPath: m_LocalScale.x

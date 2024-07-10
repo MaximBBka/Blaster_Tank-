@@ -15,6 +15,16 @@ MonoBehaviour:
   modelEnemy:
     Prefab: {fileID: 7987417886570136787, guid: 2fd4352130fe8ec4491baf23c98b4d19, type: 3}
     Health: 25
-    Speed: 10
+    Speed: 5
     enemy:
     - {fileID: 11400000, guid: 77604e0db8def1d4ca8323619962382f, type: 2}
+    HeightFindLine: 10
+    prefabRewarded:
+    - {fileID: -541746863676611151, guid: 2ac69c03554e9714f9ef2ec9a418cc7d, type: 3}
+    - {fileID: 6704344227650689232, guid: 7b474b402b675a840807adb1671ccbce, type: 3}
+    - {fileID: 1236775278512319936, guid: c23fce0ea34dc5f48b0d80d602b83abe, type: 3}
+    - {fileID: 6801351538520875652, guid: 704e37d96a5c90d49bcbc69e50a46214, type: 3}
+    - {fileID: 3943495915275200035, guid: 1c652fc87c6ab81498ac95f4d33d3c70, type: 3}
+    - {fileID: 8778194802939408286, guid: 6e34e76bf3e84b2408c08930d8b90ec7, type: 3}
+    - {fileID: 5247563139409078048, guid: 48ba22c96a3ab9f4ba817beea410d99a, type: 3}
+    - {fileID: 4830394269386943855, guid: 3322382019ab25248acc7c188e18b784, type: 3}

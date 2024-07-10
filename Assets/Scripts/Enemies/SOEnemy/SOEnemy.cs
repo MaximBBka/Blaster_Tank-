@@ -16,5 +16,6 @@ public struct ModelEnemy
     public float Health;
     public float Speed;
     public SOEnemy[] enemy;
+    public float HeightFindLine;
+    public Rewarded[] prefabRewarded;
 }
-

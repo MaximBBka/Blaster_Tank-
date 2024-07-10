@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1901ad28499f334988db927a3cf9cb1, type: 3}
+  m_Name: FirstTank
+  m_EditorClassIdentifier: 
+  ModelTanks:
+    speed: 10
+    Tank: {fileID: -2497776112707715010, guid: 5de28f112ad23064896b4b2c58c4592f, type: 3}
+    soGun:
+    - {fileID: 11400000, guid: bd8cd7fc2c1cf9048bf56a84a85d7cc7, type: 2}

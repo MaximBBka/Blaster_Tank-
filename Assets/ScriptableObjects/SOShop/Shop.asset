@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90efc29552467f4ebee69b1bdd27ead, type: 3}
+  m_Name: Shop
+  m_EditorClassIdentifier: 
+  modelsShop:
+  - prefabTank: {fileID: 11400000, guid: f7fda81cb1da8664587c6c9e6d3857c7, type: 2}
+    prefabPet: {fileID: 0}
+    prefabDelivery: {fileID: 0}
+    Price: 0
+    Name: "\u0422\u0430\u043D\u043A 1 \u0443\u0440\u043E\u0432\u043D\u044F. \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: "\u0422\u0430\u043D\u043A 1 \u0443\u0440\u043E\u0432\u043D\u044F"
+    image: {fileID: 21300000, guid: 07e5d322bfee0d745b8d53e60d067417, type: 3}
+  - prefabTank: {fileID: 11400000, guid: bca7d8eec6415434581243c5eddba96e, type: 2}
+    prefabPet: {fileID: 0}
+    prefabDelivery: {fileID: 0}
+    Price: 50
+    Name: "\u0422\u0430\u043D\u043A 2 \u0443\u0440\u043E\u0432\u043D\u044F. \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: "\u0422\u0430\u043D\u043A 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+    image: {fileID: 21300000, guid: e2571c33fc5a0e243914c55b006236d9, type: 3}
+  - prefabTank: {fileID: 11400000, guid: 0b992bf0d2e92a0499dd90775a0324f5, type: 2}
+    prefabPet: {fileID: 0}
+    prefabDelivery: {fileID: 0}
+    Price: 100
+    Name: "\u0422\u0430\u043D\u043A 3 \u0443\u0440\u043E\u0432\u043D\u044F. \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: "\u0422\u0430\u043D\u043A 3 \u0443\u0440\u043E\u0432\u043D\u044F"
+    image: {fileID: 21300000, guid: 811ddd24b8bed4047b04aeb3c31ba6e8, type: 3}
+  - prefabTank: {fileID: 11400000, guid: 692c097950c95d14aa987304e85a05fb, type: 2}
+    prefabPet: {fileID: 0}
+    prefabDelivery: {fileID: 0}
+    Price: 150
+    Name: "\u0422\u0430\u043D\u043A 4 \u0443\u0440\u043E\u0432\u043D\u044F. \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: "\u0422\u0430\u043D\u043A 4 \u0443\u0440\u043E\u0432\u043D\u044F"
+    image: {fileID: 21300000, guid: ca0bba8b728683e46ba2d40b7b97330e, type: 3}
+  - prefabTank: {fileID: 11400000, guid: e18089445ed9dd645b06cbfab8a6a0c9, type: 2}
+    prefabPet: {fileID: 0}
+    prefabDelivery: {fileID: 0}
+    Price: 200
+    Name: "\u0422\u0430\u043D\u043A 5 \u0443\u0440\u043E\u0432\u043D\u044F. \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: "\u0422\u0430\u043D\u043A 5 \u0443\u0440\u043E\u0432\u043D\u044F"
+    image: {fileID: 21300000, guid: 737f3f3c72527eb4aa478f26a255d30f, type: 3}
+  - prefabTank: {fileID: 11400000, guid: ee321425ba31ba14f934174ff9d14973, type: 2}
+    prefabPet: {fileID: 0}
+    prefabDelivery: {fileID: 0}
+    Price: 300
+    Name: "\u0422\u0430\u043D\u043A 6 \u0443\u0440\u043E\u0432\u043D\u044F. \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: "\u0422\u0430\u043D\u043A 6 \u0443\u0440\u043E\u0432\u043D\u044F"
+    image: {fileID: 21300000, guid: c9bf176d4310a8d49b236b87f57cdd1d, type: 3}
+  - prefabTank: {fileID: 11400000, guid: 34f9b2662c6be364abc1ac92bc4f2539, type: 2}
+    prefabPet: {fileID: 0}
+    prefabDelivery: {fileID: 0}
+    Price: 400
+    Name: "\u0422\u0430\u043D\u043A 7 \u0443\u0440\u043E\u0432\u043D\u044F. \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: "\u0422\u0430\u043D\u043A 7 \u0443\u0440\u043E\u0432\u043D\u044F"
+    image: {fileID: 21300000, guid: f408099e61894db4d8aa7f1ab8ba2c51, type: 3}
+  - prefabTank: {fileID: 0}
+    prefabPet: {fileID: 11400000, guid: 6c55901357e9569498b16a018afa2ba7, type: 2}
+    prefabDelivery: {fileID: 0}
+    Price: 100
+    Name: "\u041F\u0438\u0442\u043E\u043C\u0435\u0446 1 \u0443\u0440\u043E\u0432\u043D\u044F.
+      \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: 
+    image: {fileID: 21300000, guid: ef9766199aaeeab4a845d03b5c72b1ae, type: 3}
+  - prefabTank: {fileID: 0}
+    prefabPet: {fileID: 11400000, guid: 5fa0da4393cc1ba49bf272a773ddb711, type: 2}
+    prefabDelivery: {fileID: 0}
+    Price: 200
+    Name: "\u041F\u0438\u0442\u043E\u043C\u0435\u0446 2 \u0443\u0440\u043E\u0432\u043D\u044F.
+      \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: 
+    image: {fileID: 21300000, guid: 45b880af960c20c46be776c7d9291e54, type: 3}
+  - prefabTank: {fileID: 0}
+    prefabPet: {fileID: 11400000, guid: 4ca98db7c8c2acd42977ba3f832b836c, type: 2}
+    prefabDelivery: {fileID: 0}
+    Price: 300
+    Name: "\u041F\u0438\u0442\u043E\u043C\u0435\u0446 3 \u0443\u0440\u043E\u0432\u043D\u044F.
+      \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: 
+    image: {fileID: 21300000, guid: f534175ccca795a47be279800d675428, type: 3}
+  - prefabTank: {fileID: 0}
+    prefabPet: {fileID: 0}
+    prefabDelivery: {fileID: 1346633044229419798, guid: 246a07ca2cca3b843bf6b40f6817d6fd, type: 3}
+    Price: 100
+    Name: "\u0421\u0431\u043E\u0440\u043A\u0430 \u0434\u0435\u0442\u0430\u043B\u0435\u0439.
+      \u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C"
+    MainName: 
+    image: {fileID: 21300000, guid: a440f2febf2eedc48a264a8e57a736aa, type: 3}

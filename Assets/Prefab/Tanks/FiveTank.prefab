@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6245957072034565975}
   - component: {fileID: 6485319090140475253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 624283976366470613}
   - component: {fileID: 2403129374224043728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963665435222633474}
   - component: {fileID: 6885071757615426443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3920787311258910614}
   - component: {fileID: 302801758950598671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,8 @@ GameObject:
   - component: {fileID: -4047745484425612336}
   - component: {fileID: 781533812355661600}
   - component: {fileID: 5612893430705896389}
-  m_Layer: 0
+  - component: {fileID: -5532039104049384994}
+  m_Layer: 6
   m_Name: FiveTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,15 +391,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a723b3ac01b01dc4e9db368563d489d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Upgrade: {fileID: -5532039104049384994}
   ModelTank:
     speed: 0
     Tank: {fileID: 0}
     soGun: []
-  SOTank: {fileID: 11400000, guid: f7fda81cb1da8664587c6c9e6d3857c7, type: 2}
+  SOTank: {fileID: 11400000, guid: e18089445ed9dd645b06cbfab8a6a0c9, type: 2}
   GunList:
   - {fileID: 7251142532546805860}
   - {fileID: 5852098868568429379}
   - {fileID: 4271372434819068762}
+  pets: []
   rb: {fileID: 781533812355661600}
 --- !u!50 &781533812355661600
 Rigidbody2D:
@@ -472,6 +475,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.39, y: 2.23}
   m_EdgeRadius: 0
+--- !u!114 &-5532039104049384994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4501284782058079872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7780f6cccb3b64daf54958aa25f4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TankBase: {fileID: 0}
 --- !u!1 &5742099297297158675
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8198173050597235323}
   - component: {fileID: 7475896802345157670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,13 +580,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 624283976366470613}
     m_Modifications:
+    - target: {fileID: 1782127960759249690, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459418534643096650, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3258060592425228493, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
       propertyPath: m_Name
       value: TwoRedGunForRedBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 3258060592425228493, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6284601934171439511, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
       propertyPath: m_Icon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284601934171439511, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6512031716813960757, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
       propertyPath: m_LocalScale.x
@@ -649,9 +681,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 624283976366470613}
     m_Modifications:
+    - target: {fileID: 790700860556019369, guid: cccc1dba4006c674f9f32ad020f68cdb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680716567477383854, guid: cccc1dba4006c674f9f32ad020f68cdb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597043719453464633, guid: cccc1dba4006c674f9f32ad020f68cdb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970281732143382480, guid: cccc1dba4006c674f9f32ad020f68cdb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785103465919712542, guid: cccc1dba4006c674f9f32ad020f68cdb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5123581681960104068, guid: cccc1dba4006c674f9f32ad020f68cdb, type: 3}
       propertyPath: m_Name
       value: BlueGunForBlueBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123581681960104068, guid: cccc1dba4006c674f9f32ad020f68cdb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6545495024202243487, guid: cccc1dba4006c674f9f32ad020f68cdb, type: 3}
       propertyPath: m_LocalScale.x
@@ -705,6 +761,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7448007785179306608, guid: cccc1dba4006c674f9f32ad020f68cdb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -734,13 +794,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 624283976366470613}
     m_Modifications:
+    - target: {fileID: 1782127960759249690, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459418534643096650, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3258060592425228493, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
       propertyPath: m_Name
       value: TwoRedGunForRedBullet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3258060592425228493, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6284601934171439511, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
       propertyPath: m_Icon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284601934171439511, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6512031716813960757, guid: 4e7c5f02fba518546a0dfb4a02b22e34, type: 3}
       propertyPath: m_LocalScale.x

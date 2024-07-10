@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a610214a5eec04caeff79d29df54d1, type: 3}
+  m_Name: SecondaryTank
+  m_EditorClassIdentifier: 
+  Model:
+    prefab: {fileID: 117826585129243824, guid: 8f92e3077d6ba7642bd034e4ee8ccb88, type: 3}
+    Speed: 5
+    soGun:
+    - {fileID: 11400000, guid: b35ce26269c6c32439517fc5804f705e, type: 2}

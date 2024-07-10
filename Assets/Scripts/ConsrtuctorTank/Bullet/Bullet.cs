@@ -3,12 +3,14 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public TankBase _tank;
+    public ShootingPets pets;
     public ModelBulet Bulet;
     [SerializeField] private Rigidbody2D rb;
-    public void Init(TankBase tank, ModelBulet bulet)
+    public void Init(TankBase tank, ModelBulet bulet, ShootingPets shooting)
     {
         _tank = tank;
         Bulet = bulet;
+        pets = shooting;
     }
 
     public void Move()
@@ -34,11 +36,6 @@ public class Bullet : MonoBehaviour
         {
             unit.ModelEnemy.Health -= Bulet.Damage;
             Destroy(gameObject);
-            //if (unit.ModelEnemy.Health < 0)
-            //{
-            //    Destroy(unit.gameObject);
-            //}
         }
     }
-
 }
