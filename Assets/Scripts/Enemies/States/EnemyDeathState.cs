@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class EnemyDeathState : State
 {
@@ -18,6 +19,7 @@ public class EnemyDeathState : State
     public override void OnStart()
     {
         controller.unit.particleSystem.Play();
+        AudioManager.Instance.Sound.PlayOneShot(AudioManager.Instance.EnemyDeath);
         controller.unit.StartCoroutine(DelayParticle());
         controller.unit.rb.constraints = RigidbodyConstraints2D.FreezeAll;
         controller.unit.spawnEnemies.TryPlayChildSpawn(controller.unit, controller.unit.ModelEnemy.enemy);
@@ -35,5 +37,6 @@ public class EnemyDeathState : State
     {
         yield return new WaitForSeconds(controller.unit.particleSystem.main.duration);
         GameObject.Destroy(controller.unit.gameObject);
+        MainUi.Instance.TotalScore += 50;        
     }
 }

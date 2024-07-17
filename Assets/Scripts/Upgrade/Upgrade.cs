@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static BayatGames.SaveGameFree.Examples.ExampleSaveCustom;
+using YG;
 
 public class Upgrade : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Upgrade : MonoBehaviour
 
     public SaveData SaveData;
 
+    private bool wasActiveFilling = false;
+
     private void Awake()
     {
         Load();
@@ -26,13 +29,21 @@ public class Upgrade : MonoBehaviour
 
     public void FillingUpgrade() // Переделать на сразу заполнение с отключением и включение при выборке. // ПОЧЕМУ ЗАУПСКАЕТСЯ ПРИ СТАРТЕ ИГРЫ????
     {
-        for (int i = 0; i < SOUpgrade.ModelsUpgrade.Length; i++)
+        if (!wasActiveFilling)
         {
-            UIUpgradeItem upgrade = Instantiate(upgradeItem, SpawnPos);
-            upgrade.Init(this, SOUpgrade.ModelsUpgrade[i], SOUpgrade.ModelsUpgrade[i].tank, i);
-            upgrade.TitleName.SetText($"{SOUpgrade.ModelsUpgrade[i].NameTank}");
-            upgrade.gameObject.SetActive(false);
-            Upgrades.Add(upgrade);
+            wasActiveFilling = true;
+
+            if (Upgrades.Count < 1)
+            {
+                for (int i = 0; i < SOUpgrade.ModelsUpgrade.Length; i++)
+                {
+                    UIUpgradeItem upgrade = Instantiate(upgradeItem, SpawnPos);
+                    upgrade.Init(this, SOUpgrade.ModelsUpgrade[i], SOUpgrade.ModelsUpgrade[i].tank, i);
+                    upgrade.TitleName.SetText($"{SOUpgrade.ModelsUpgrade[i].NameTank}");
+                    upgrade.gameObject.SetActive(false);
+                    Upgrades.Add(upgrade);
+                }
+            }
         }
     }
     public void ShowItemUpgrade()
@@ -77,7 +88,7 @@ public class Upgrade : MonoBehaviour
                 else
                 {
                     Upgrades[i].NameProductDamage.SetText($"Урон. Стоимость улучшения: {SOUpgrade.ModelsUpgrade[i].PriceUpgarde[SaveData.Tanks[i].indexUpgradeDamage]}");
-                }                          
+                }
             }
             else
             {
@@ -87,7 +98,9 @@ public class Upgrade : MonoBehaviour
     }
     public void Load()
     {
-        SaveData = SaveGame.Load<SaveData>("SavesTank");
+        //SaveData = SaveGame.Load<SaveData>("SavesTank");
+        YandexGame.LoadProgress();
+        SaveData = YandexGame.savesData.SaveData;
 
         if (SaveData.Tanks == null)
         {
@@ -99,7 +112,7 @@ public class Upgrade : MonoBehaviour
                 SaveData.Tanks[i].DamageTank = 1f;
                 SaveData.Tanks[i].indexUpgradeSpeed = 0;
                 SaveData.Tanks[i].indexUpgradeDelay = 0;
-                SaveData.Tanks[i].indexUpgradeDelay = 0;
+                SaveData.Tanks[i].indexUpgradeDamage = 0;
                 SaveData.Tanks[i].CheckBuyTank = true;
             }
         }

@@ -13,13 +13,6 @@ public abstract class TankBase : MonoBehaviour
     {
         ModelTank = tank;
     }
-    //private void Awake()
-    //{
-    //    for (int i = 0; i < GunList.Count; i++)
-    //    {
-    //        GunList[i].Init(ModelTank.soGun[i].modelGun,null,this);
-    //    }
-    //}
     public void InitGun()
     {
         for (int i = 0; i < GunList.Count; i++)

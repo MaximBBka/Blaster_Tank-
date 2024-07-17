@@ -15,6 +15,7 @@ public class Rewarded : MonoBehaviour
         {
             MainUi.Instance.TotalMoney += 1;
             Destroy(this.gameObject);
+            AudioManager.Instance.Sound.PlayOneShot(AudioManager.Instance.Coin);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,6 +24,15 @@ public class Rewarded : MonoBehaviour
         {
             MainUi.Instance.TotalMoney += 1;
             Destroy(this.gameObject);
+            AudioManager.Instance.Sound.PlayOneShot(AudioManager.Instance.Coin);
         }
+    }
+    public void DestroyRewarded()
+    {
+        Destroy(this.gameObject, 60f);
+    }
+    private void Update()
+    {
+        DestroyRewarded();
     }
 }

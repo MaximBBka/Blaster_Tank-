@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using YG;
 
 public class Shop : MonoBehaviour
 {
@@ -32,12 +33,6 @@ public class Shop : MonoBehaviour
             UiShopItem item = Instantiate(UiShopItem, Content);
             item.Init(Upgrade, this, shop.modelsShop[i], i);
             item.shopItemCalback += ShopItemCalback;
-            //item.typeItem = ItemShopType.Buy;
-            //if (SaveData.Tanks != null && i < 8)
-            //{
-            //    item.BuyButton.gameObject.SetActive(SaveData.Tanks[i].CheckBuyTank);
-            //}
-            //item.SelectButton.gameObject.SetActive(false);
             Items.Add(item);
         }
     }
@@ -48,6 +43,8 @@ public class Shop : MonoBehaviour
             if (MainUi.Instance.TotalMoney >= shop.modelsShop[index].Price)
             {
                 MainUi.Instance.TotalMoney -= shop.modelsShop[index].Price;
+                YandexGame.savesData.Money = MainUi.Instance.TotalMoney;
+                YandexGame.SaveProgress();
             }
         }
         if (item == ItemShopType.Select)

@@ -351,7 +351,6 @@ GameObject:
   - component: {fileID: -4047745484425612336}
   - component: {fileID: 781533812355661600}
   - component: {fileID: 5612893430705896389}
-  - component: {fileID: -5532039104049384994}
   m_Layer: 6
   m_Name: FiveTank
   m_TagString: Untagged
@@ -391,17 +390,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a723b3ac01b01dc4e9db368563d489d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Upgrade: {fileID: -5532039104049384994}
+  CameraTraget: {fileID: 0}
   ModelTank:
     speed: 0
     Tank: {fileID: 0}
     soGun: []
+  shootingPets: {fileID: 0}
   SOTank: {fileID: 11400000, guid: e18089445ed9dd645b06cbfab8a6a0c9, type: 2}
   GunList:
   - {fileID: 7251142532546805860}
   - {fileID: 5852098868568429379}
   - {fileID: 4271372434819068762}
-  pets: []
   rb: {fileID: 781533812355661600}
 --- !u!50 &781533812355661600
 Rigidbody2D:
@@ -475,19 +474,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.39, y: 2.23}
   m_EdgeRadius: 0
---- !u!114 &-5532039104049384994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4501284782058079872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7780f6cccb3b64daf54958aa25f4e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TankBase: {fileID: 0}
 --- !u!1 &5742099297297158675
 GameObject:
   m_ObjectHideFlags: 0

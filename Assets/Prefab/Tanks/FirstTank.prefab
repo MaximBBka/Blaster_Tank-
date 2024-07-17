@@ -243,7 +243,6 @@ GameObject:
   - component: {fileID: -2497776112707715010}
   - component: {fileID: 6611321073670626878}
   - component: {fileID: 3628666250909942564}
-  - component: {fileID: 1104391228880975946}
   m_Layer: 6
   m_Name: FirstTank
   m_TagString: Untagged
@@ -290,6 +289,7 @@ MonoBehaviour:
     speed: 0
     Tank: {fileID: 0}
     soGun: []
+  shootingPets: {fileID: 0}
   SOTank: {fileID: 11400000, guid: f7fda81cb1da8664587c6c9e6d3857c7, type: 2}
   GunList:
   - {fileID: 6601368437886635517}
@@ -366,18 +366,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &1104391228880975946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4861026388829051003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7780f6cccb3b64daf54958aa25f4e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5041670798295569793
 GameObject:
   m_ObjectHideFlags: 0

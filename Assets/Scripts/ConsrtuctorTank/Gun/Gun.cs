@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
     }
     public void Shoot()
     {
+        AudioManager.Instance.Sound.PlayOneShot(AudioManager.Instance.Shoot);
         for (int i = 0; i < SpawnPos.Length; i++)
         {
             Bullet bullet = Instantiate(ModelGun.soBullet.ModelBulet.prefab, SpawnPos[i].position, Quaternion.identity);

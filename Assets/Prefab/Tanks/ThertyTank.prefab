@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: 8607756841213925786}
   - component: {fileID: 6824168357039112435}
   - component: {fileID: 7304078905550334693}
-  - component: {fileID: 4012698659465043265}
   m_Layer: 6
   m_Name: ThertyTank
   m_TagString: Untagged
@@ -136,17 +135,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9ffdffa7bf79a418755ee17768fb09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Upgrade: {fileID: 4012698659465043265}
+  CameraTraget: {fileID: 0}
   ModelTank:
     speed: 0
     Tank: {fileID: 0}
     soGun: []
+  shootingPets: {fileID: 0}
   SOTank: {fileID: 11400000, guid: 0b992bf0d2e92a0499dd90775a0324f5, type: 2}
   GunList:
   - {fileID: 5457615468706252804}
   - {fileID: 7854559859054192382}
   - {fileID: 8489212176769618959}
-  pets: []
   rb: {fileID: 7304078905550334693}
 --- !u!61 &6824168357039112435
 BoxCollider2D:
@@ -220,19 +219,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &4012698659465043265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737377716650456990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7780f6cccb3b64daf54958aa25f4e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TankBase: {fileID: 0}
 --- !u!1 &2241996635559230350
 GameObject:
   m_ObjectHideFlags: 0

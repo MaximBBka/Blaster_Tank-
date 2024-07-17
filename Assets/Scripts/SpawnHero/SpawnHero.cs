@@ -11,24 +11,26 @@ public class SpawnHero : MonoBehaviour
     [SerializeField] private Transform spawnPosPet;
     [SerializeField] private Transform spawnPosDelivery;
     private TankBase prefabTank = null;
+    public ShootingPets prefab = null;
+    public PetDelivery prefabDelivery = null;
     public void Spawn()
     {
         if (shop.tank != null)
         {
             prefabTank = Instantiate(shop.tank.ModelTanks.Tank, spawnPosTank.position, Quaternion.identity);
             prefabTank.Init(shop.tank.ModelTanks);
-            prefabTank.InitGun();                       
+            prefabTank.InitGun();
             camera.Follow = prefabTank.transform;
         }
         if (shop.pet != null)
         {
-            ShootingPets prefab = Instantiate(shop.pet.Model.prefab, spawnPosPet.position, Quaternion.identity);
+            prefab = Instantiate(shop.pet.Model.prefab, spawnPosPet.position, Quaternion.identity);
             prefab.Init(shop.pet.Model, prefabTank);
             prefab.InitGun();
         }
-        if(shop.petDelivery != null)
+        if (shop.petDelivery != null)
         {
-            PetDelivery prefab = Instantiate(shop.petDelivery, spawnPosDelivery.position, Quaternion.identity);
+            prefabDelivery = Instantiate(shop.petDelivery, spawnPosDelivery.position, Quaternion.identity);
         }
     }
 }

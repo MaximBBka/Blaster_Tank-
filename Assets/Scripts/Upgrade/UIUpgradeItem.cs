@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static BayatGames.SaveGameFree.Examples.ExampleSaveCustom;
+using YG;
 
 public class UIUpgradeItem : MonoBehaviour
 {
@@ -37,9 +38,9 @@ public class UIUpgradeItem : MonoBehaviour
         Upgrade = upgrade;
         SOTank = tank;
         TitleName.SetText($"{model.NameTank}");
-        //ButtonUpgradeSpeed.onClick.AddListener(UpgradeSpeed);
-        //ButtonUpgradeDelayShoot.onClick.AddListener(UpgradeDelayShoot);
-        //ButtonUpgradeDamage.onClick.AddListener(UpgradeDamage);
+        ButtonUpgradeSpeed.onClick.AddListener(AudioManager.Instance.ButtonSound);
+        ButtonUpgradeDelayShoot.onClick.AddListener(AudioManager.Instance.ButtonSound);
+        ButtonUpgradeDamage.onClick.AddListener(AudioManager.Instance.ButtonSound);
     }
     public void UpgradeSpeed()
     {
@@ -51,12 +52,17 @@ public class UIUpgradeItem : MonoBehaviour
 
                 //Сохранение данных
                 Upgrade.SaveData.Tanks[_index].SpeedTank = Speed;
-                SaveGame.Save<SaveData>("SavesTank", Upgrade.SaveData, false);
+                YandexGame.savesData.SaveData = Upgrade.SaveData;
+                YandexGame.SaveProgress();
 
                 SOTank.ModelTanks.speed = Speed;
 
                 MainUi.Instance.TotalMoney -= Upgrade.SOUpgrade.ModelsUpgrade[0].PriceUpgarde[Upgrade.SaveData.Tanks[_index].indexUpgradeSpeed];
+                YandexGame.savesData.Money = MainUi.Instance.TotalMoney;
+                YandexGame.SaveProgress();
                 Upgrade.SaveData.Tanks[_index].indexUpgradeSpeed++;
+                YandexGame.savesData.SaveData = Upgrade.SaveData;
+                YandexGame.SaveProgress();
                 if (Upgrade.SaveData.Tanks[_index].indexUpgradeSpeed < 3)
                 {
                     NameProductSpeed.SetText($"Скорость. Стоимость улучшения: {Upgrade.SOUpgrade.ModelsUpgrade[0].PriceUpgarde[Upgrade.SaveData.Tanks[_index].indexUpgradeSpeed]}");
@@ -80,11 +86,16 @@ public class UIUpgradeItem : MonoBehaviour
                 Upgrade.SaveData.Tanks[_index].DelayTank = Delay;
                 for (int i = 0; i < SOTank.ModelTanks.soGun.Length; i++)
                 {
-                    SaveGame.Save<SaveData>("SavesTank", Upgrade.SaveData, false);
+                    YandexGame.savesData.SaveData = Upgrade.SaveData;
+                    YandexGame.SaveProgress();
                     SOTank.ModelTanks.soGun[i].modelGun.DelayShoot = Delay;
                 }
                 MainUi.Instance.TotalMoney -= Upgrade.SOUpgrade.ModelsUpgrade[0].PriceUpgarde[Upgrade.SaveData.Tanks[_index].indexUpgradeDelay];
+                YandexGame.savesData.Money = MainUi.Instance.TotalMoney;
+                YandexGame.SaveProgress();
                 Upgrade.SaveData.Tanks[_index].indexUpgradeDelay++;
+                YandexGame.savesData.SaveData = Upgrade.SaveData;
+                YandexGame.SaveProgress();
                 if (Upgrade.SaveData.Tanks[_index].indexUpgradeDelay < 3)
                 {
                     NameProductDelayShoot.SetText($"Скорость стрельбы. Стоимость улучшения: {Upgrade.SOUpgrade.ModelsUpgrade[0].PriceUpgarde[Upgrade.SaveData.Tanks[_index].indexUpgradeDelay]}");
@@ -109,12 +120,16 @@ public class UIUpgradeItem : MonoBehaviour
                 Upgrade.SaveData.Tanks[_index].DamageTank = Damage;
                 for (int i = 0; i < SOTank.ModelTanks.soGun.Length; i++)
                 {
-                    SaveGame.Save<SaveData>("SavesTank", Upgrade.SaveData, false);
+                    YandexGame.savesData.SaveData = Upgrade.SaveData;
+                    YandexGame.SaveProgress();
                     SOTank.ModelTanks.soGun[i].modelGun.soBullet.ModelBulet.Damage = Damage;
                 }
                 MainUi.Instance.TotalMoney -= Upgrade.SOUpgrade.ModelsUpgrade[0].PriceUpgarde[Upgrade.SaveData.Tanks[_index].indexUpgradeDamage];
+                YandexGame.savesData.Money = MainUi.Instance.TotalMoney;
+                YandexGame.SaveProgress();
                 Upgrade.SaveData.Tanks[_index].indexUpgradeDamage++;
-                SaveGame.Save<SaveData>("SavesTank", Upgrade.SaveData, false);
+                YandexGame.savesData.SaveData = Upgrade.SaveData;
+                YandexGame.SaveProgress();
                 if (Upgrade.SaveData.Tanks[_index].indexUpgradeDamage < 3)
                 {
                     NameProductDamage.SetText($"Урон. Стоимость улучшения: {Upgrade.SOUpgrade.ModelsUpgrade[0].PriceUpgarde[Upgrade.SaveData.Tanks[_index].indexUpgradeDamage]}");

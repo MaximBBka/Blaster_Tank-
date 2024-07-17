@@ -2,9 +2,9 @@ using BayatGames.SaveGameFree;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class UiShopItem : MonoBehaviour
 {
@@ -29,7 +29,9 @@ public class UiShopItem : MonoBehaviour
         indexSelect = index;
         typeItem = type;
         BuyButton.onClick.AddListener(Buy);
+        BuyButton.onClick.AddListener(AudioManager.Instance.ButtonSound);
         SelectButton.onClick.AddListener(Select);
+        SelectButton.onClick.AddListener(AudioManager.Instance.ButtonSound);
         BuyButton.gameObject.SetActive(Upgrade.SaveData.Tanks[indexSelect].CheckBuyTank);
         if(Upgrade.SaveData.Tanks[indexSelect].CheckBuyTank == false)
         {
@@ -46,7 +48,11 @@ public class UiShopItem : MonoBehaviour
         if (MainUi.Instance.TotalMoney < temp || indexSelect == 0)
         {
             Upgrade.SaveData.Tanks[indexSelect].CheckBuyTank = false;
-            SaveGame.Save<SaveData>("SavesTank", Upgrade.SaveData, false);
+
+            //SaveGame.Save<SaveData>("SavesTank", Upgrade.SaveData);
+            YandexGame.savesData.SaveData = Upgrade.SaveData;
+            YandexGame.SaveProgress();
+
             BuyButton.gameObject.SetActive(false);
             SelectButton.gameObject.SetActive(true);
             textButton.SetText("¬€¡–¿“‹");
@@ -82,7 +88,6 @@ public class UiShopItem : MonoBehaviour
             {
                 Shop.Items[i].textButton.SetText("¬€¡–¿Õ");
                 Upgrade.ShowItemUpgrade();
-
             }
         }
     }
